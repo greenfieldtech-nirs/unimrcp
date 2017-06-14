@@ -17,3 +17,11 @@ endif
 if RECORDER_PLUGIN
 SUBDIRS               += mrcp-recorder
 endif
+
+if POCKETSPHINX_PLUGIN
+SUBDIRS               += mrcp-pocketsphinx
+endif
+
+if FLITE_PLUGIN
+SUBDIRS               += mrcp-flite
+endif
