@@ -22,6 +22,6 @@ if POCKETSPHINX_PLUGIN
 SUBDIRS               += mrcp-pocketsphinx
 endif
 
-if FLITE_PLUGIN
-SUBDIRS               += mrcp-flite
-endif
+#if FLITE_PLUGIN
+#SUBDIRS               += mrcp-flite
+#endif
