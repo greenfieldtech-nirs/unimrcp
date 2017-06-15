@@ -18,7 +18,7 @@
 
 #include <stdlib.h>
 #include <apr_xml.h>
-#include "pocketsphinx_properties.h"
+#include "../include/pocketsphinx_properties.h"
 #include "apt_log.h"
 
 static const apr_xml_elem* pocketsphinx_document_load(const char *file_path, apr_pool_t *pool)
