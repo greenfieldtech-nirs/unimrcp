@@ -29,7 +29,7 @@
  * 5. Methods (callbacks) of the MPF engine stream MUST not block.
  */
 
-#include <pocketsphinx.h>
+#include <pocketsphinx/pocketsphinx.h>
 #include <apr_thread_cond.h>
 #include <apr_thread_proc.h>
 #include <apr_tables.h>
