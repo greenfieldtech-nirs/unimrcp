@@ -187,6 +187,11 @@ UNI_PLUGIN_ENABLED(recorder)
 
 AM_CONDITIONAL([RECORDER_PLUGIN],[test "${enable_recorder_plugin}" = "yes"])
 
+dnl PocketSphinx plugin.
+UNI_PLUGIN_ENABLED(pocketsphinx)
+
+AM_CONDITIONAL([POCKETSPHINX_PLUGIN],[test "${enable_pocketsphinx_plugin}" = "yes"])
+
 dnl Enable test suites.
 AC_ARG_ENABLE(test-suites,
     [AC_HELP_STRING([--enable-test-suites  ],[build test suites])],
@@ -214,6 +219,7 @@ AC_CONFIG_FILES([
     modules/mrcp-unirtsp/Makefile
     plugins/Makefile
     plugins/mrcp-recorder/Makefile
+    plugins/mrcp-pocketsphinx/Makefile
     plugins/demo-synth/Makefile
     plugins/demo-recog/Makefile
     plugins/demo-verifier/Makefile
@@ -269,6 +275,7 @@ echo Demo synthesizer plugin....... : $enable_demosynth_plugin
 echo Demo recognizer plugin........ : $enable_demorecog_plugin
 echo Demo verifier plugin.......... : $enable_demoverifier_plugin
 echo Recorder plugin............... : $enable_recorder_plugin
+echo PocketSphinx plugin........... : $enable_pocketsphinx_plugin
 echo
 echo Installation layout........... : $layout_name
 echo Installation directory........ : $prefix
