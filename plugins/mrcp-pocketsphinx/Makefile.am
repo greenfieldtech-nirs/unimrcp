@@ -1,3 +1,6 @@
+UNIMRCP_SPHINXBASE_INCLUDES = /usr/local/include/sphinxbase
+UNIMRCP_POCKETSPHINX_INCLUDES = /usr/local/include/pocketsphinx
+
 AM_CPPFLAGS                 = $(UNIMRCP_PLUGIN_INCLUDES) \
                               $(UNIMRCP_SPHINXBASE_INCLUDES) \
                               $(UNIMRCP_POCKETSPHINX_INCLUDES)
