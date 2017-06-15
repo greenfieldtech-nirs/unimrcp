@@ -184,7 +184,7 @@ static apt_bool_t pocketsphinx_engine_open(mrcp_engine_t *engine_base)
 	const apt_dir_layout_t *dir_layout = engine_base->dir_layout;
 
 	char *file_path = NULL;
-	apr_filepath_merge(&file_path,dir_layout->conf_dir_path,POCKETSPHINX_CONFFILE_NAME,0,engine_base->pool);
+	apr_filepath_merge(&file_path,NULL,POCKETSPHINX_CONFFILE_NAME,0,engine_base->pool);
 
 	/* load properties */
 	pocketsphinx_properties_load(&engine->properties,file_path,dir_layout,engine_base->pool);
