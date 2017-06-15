@@ -36,7 +36,7 @@
 #include <apr_file_io.h>
 #include "mrcp_recog_engine.h"
 #include "mpf_activity_detector.h"
-#include "./pocketsphinx_properties.h"
+#include "pocketsphinx_properties.h"
 #include "apt_log.h"
 
 #define POCKETSPHINX_CONFFILE_NAME "pocketsphinx.xml"
