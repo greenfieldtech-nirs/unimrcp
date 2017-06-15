@@ -2,6 +2,8 @@ UNIMRCP_SPHINXBASE_INCLUDES = /usr/local/include/sphinxbase
 UNIMRCP_POCKETSPHINX_INCLUDES = /usr/local/include/pocketsphinx
 UNIMRCP_PLUGIN_INCLUDES = ../include
 UNIMRCP_ENGINE_INCLUDES = ../../libs/mrcp-engine/include
+DESTDIR = /usr/local/unimrcp/
+confdir = conf
 
 AM_CPPFLAGS                 = -I$(UNIMRCP_PLUGIN_INCLUDES) \
                               -I$(UNIMRCP_SPHINXBASE_INCLUDES) \
