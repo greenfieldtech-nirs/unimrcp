@@ -7,7 +7,7 @@ AM_CPPFLAGS                 = -I$(UNIMRCP_PLUGIN_INCLUDES) \
                               -I$(UNIMRCP_SPHINXBASE_INCLUDES) \
                               -I$(UNIMRCP_POCKETSPHINX_INCLUDES) \
                               -I$(UNIMRCP_ENGINE_INCLUDES)
-                              
+
 plugin_LTLIBRARIES          = mrcppocketsphinx.la
 
 mrcppocketsphinx_la_SOURCES = src/mrcp_pocketsphinx.c \
