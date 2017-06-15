@@ -185,10 +185,12 @@ apt_bool_t pocketsphinx_properties_load(pocketsphinx_properties_t *properties,
 
 	/* verify loaded properties */
 	if(!properties->data_dir || *properties->data_dir == '\0') {
-		properties->data_dir = dir_layout->data_dir_path;
+		//properties->data_dir = dir_layout->data_dir_path;
+		properties->data_dir = "/tmp";
 	}
 	if(!properties->save_waveform_dir || *properties->save_waveform_dir == '\0') {
-		properties->save_waveform_dir = dir_layout->data_dir_path;
+		//properties->save_waveform_dir = dir_layout->data_dir_path;
+		properties->save_waveform_dir = "/tmp";
 	}
 
 	if(!properties->dictionary) {
