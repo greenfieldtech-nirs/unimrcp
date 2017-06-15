@@ -1,11 +1,13 @@
 UNIMRCP_SPHINXBASE_INCLUDES = /usr/local/include/sphinxbase
 UNIMRCP_POCKETSPHINX_INCLUDES = /usr/local/include/pocketsphinx
 UNIMRCP_PLUGIN_INCLUDES = ../include
+UNIMRCP_ENGINE_INCLUDES = ../../libs/mrcp-engine/include
 
 AM_CPPFLAGS                 = -I$(UNIMRCP_PLUGIN_INCLUDES) \
                               -I$(UNIMRCP_SPHINXBASE_INCLUDES) \
-                              -I$(UNIMRCP_POCKETSPHINX_INCLUDES)
-
+                              -I$(UNIMRCP_POCKETSPHINX_INCLUDES) \
+                              -I$(UNIMRCP_ENGINE_INCLUDES)
+                              
 plugin_LTLIBRARIES          = mrcppocketsphinx.la
 
 mrcppocketsphinx_la_SOURCES = src/mrcp_pocketsphinx.c \
