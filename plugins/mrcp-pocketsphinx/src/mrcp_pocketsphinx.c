@@ -181,7 +181,7 @@ static apt_bool_t pocketsphinx_engine_destroy(mrcp_engine_t *engine_base)
 static apt_bool_t pocketsphinx_engine_open(mrcp_engine_t *engine_base)
 {
 	pocketsphinx_engine_t *engine = engine_base->obj;
-	const apt_dir_layout_t *dir_layout = engine_base->dir_layout;
+	const apt_custom_dir_layout_create *dir_layout = engine_base->dir_layout;
 
 	char *file_path = NULL;
 	apr_filepath_merge(&file_path,dir_layout->conf_dir_path,POCKETSPHINX_CONFFILE_NAME,0,engine_base->pool);
@@ -441,7 +441,7 @@ static mrcp_status_code_e pocketsphinx_grammar_load(pocketsphinx_recognizer_t *r
 {
 	/* load grammar */
 	mrcp_engine_channel_t *channel = recognizer->channel;
-	const apt_dir_layout_t *dir_layout = channel->engine->dir_layout;
+	const apt_custom_dir_layout_create *dir_layout = channel->engine->dir_layout;
 	const char *grammar_file_path = NULL;
 	const char *grammar_file_name = NULL;
 	apr_file_t *fd = NULL;
