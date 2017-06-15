@@ -1,4 +1,4 @@
-INCLUDES                    = $(UNIMRCP_PLUGIN_INCLUDES) \
+AM_CPPFLAGS                 = $(UNIMRCP_PLUGIN_INCLUDES) \
                               $(UNIMRCP_SPHINXBASE_INCLUDES) \
                               $(UNIMRCP_POCKETSPHINX_INCLUDES)
 
