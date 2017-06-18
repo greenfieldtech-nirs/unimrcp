@@ -604,7 +604,7 @@ static apt_bool_t pocketsphinx_recognize(pocketsphinx_recognizer_t *recognizer, 
 		}
 	}
 
-	if(!recognizer->decoder || ps_start_utt(recognizer->decoder, NULL) < 0) {
+	if(!recognizer->decoder || ps_start_utt(recognizer->decoder) < 0) {
 		response->start_line.status_code = MRCP_STATUS_CODE_METHOD_FAILED;
 		response_recog_header->completion_cause = RECOGNIZER_COMPLETION_CAUSE_ERROR;
 		mrcp_resource_header_property_add(response,RECOGNIZER_HEADER_COMPLETION_CAUSE);
@@ -737,11 +737,11 @@ static apt_bool_t pocketsphinx_recognition_complete(pocketsphinx_recognizer_t *r
 		char const *hyp;
 		char const *uttid;
 
-		hyp = ps_get_hyp(recognizer->decoder, &score, &uttid);
+		hyp = ps_get_hyp(recognizer->decoder, &score);
 		if(hyp && strlen(hyp) > 0) {
 			int32 prob;
 			recognizer->last_result = apr_pstrdup(recognizer->channel->pool,hyp);
-			prob = ps_get_prob(recognizer->decoder, &uttid); 
+			prob = ps_get_prob(recognizer->decoder);
 			apt_log(APT_LOG_MARK,APT_PRIO_INFO,"Get Recognition Final Result [%s] Prob [%d] Score [%d] "APT_SIDRES_FMT,
 				hyp,prob,score,RECOGNIZER_SIDRES(recognizer));
 			if(pocketsphinx_result_build(recognizer,complete_event) == TRUE) {
@@ -946,7 +946,7 @@ static apt_bool_t pocketsphinx_stream_write(mpf_audio_stream_t *stream, const mp
 			char const *uttid;
 
 			recognizer->partial_result_timeout = 0;
-			hyp = ps_get_hyp(recognizer->decoder, &score, &uttid);
+			hyp = ps_get_hyp(recognizer->decoder, &score);
 			if(hyp && strlen(hyp) > 0) {
 				if(recognizer->last_result == NULL || 0 != strcmp(recognizer->last_result, hyp)) {
 					recognizer->last_result = apr_pstrdup(recognizer->channel->pool,hyp);
