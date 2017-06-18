@@ -93,10 +93,11 @@
 
     <!-- Factory of plugins (MRCP engines) -->
     <plugin-factory>
-      <engine id="Demo-Synth-1" name="demosynth" enable="true"/>
-      <engine id="Demo-Recog-1" name="demorecog" enable="true"/>
-      <engine id="Demo-Verifier-1" name="demoverifier" enable="true"/>
-      <engine id="Recorder-1" name="mrcprecorder" enable="true"/>
+      <engine id="Demo-Synth-1" name="demosynth" enable="false"/>
+      <engine id="Demo-Recog-1" name="demorecog" enable="false"/>
+      <engine id="Demo-Verifier-1" name="demoverifier" enable="false"/>
+      <engine id="Recorder-1" name="mrcprecorder" enable="false"/>
+      <engine id="PocketSphinx-1" name="mrcppocketsphinx" enable="true"/>
 
       <!-- Engines may have additional named and generic params
       <engine id="Your-Engine-1" name="yourengine" enable="false">
@@ -145,12 +146,10 @@
       <rtp-factory>RTP-Factory-1</rtp-factory>
       <rtp-settings>RTP-Settings-1</rtp-settings>
 
-      <!-- It's possible to define profile based map of resources and engines.
       <resource-engine-map>
-        <param name="speechsynth" value="Flite-1"/>
+        <!--<param name="speechsynth" value="Flite-1"/>-->
         <param name="speechrecog" value="PocketSphinx-1"/>
       </resource-engine-map>
-      -->
     </mrcpv2-profile>
 
     <!-- MRCPv1 default profile -->
